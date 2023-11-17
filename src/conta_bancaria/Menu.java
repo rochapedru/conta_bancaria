@@ -3,6 +3,7 @@ package conta_bancaria;
 
 import java.util.Scanner;
 
+import conta_bancaria.model.Conta;
 import conta_bancaria.util.Cores;
 
 public class Menu {
@@ -15,8 +16,18 @@ public class Menu {
 		imprimirMenu();
 
 		while (true) {
+			
+			/** Cria objetos */
+			Conta c1 = new Conta(1, 123, 2, "Vitoria", 100000.0f);
+			c1.visualizar();
+			System.out.println("Exibis saldo: " + c1.getSaldo());
+			c1.setSaldo(300000.0f);
+			c1.visualizar();
+			c1.depositar(500000.0f);
+			c1.visualizar();
 
 			opcao = leia.nextInt();
+			
 
 			if (opcao == 9) {
 				System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
