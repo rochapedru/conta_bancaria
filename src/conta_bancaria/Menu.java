@@ -1,6 +1,9 @@
 package conta_bancaria;
 
+
 import java.util.Scanner;
+
+import conta_bancaria.util.Cores;
 
 public class Menu {
 	public static void main(String[] args) {
@@ -37,6 +40,7 @@ public class Menu {
 	}
 
 	public static void imprimirMenu() {
+		System.out.println(Cores.ANSI_BLACK_BACKGROUND + Cores.TEXT_GREEN_BOLD_BRIGHT);
 		System.out.println("*****************************************************");
 		System.out.println("                BANCO DO BRAZIL COM Z                ");
 		System.out.println("*****************************************************");
@@ -51,63 +55,75 @@ public class Menu {
 		System.out.println("            9 - Sair                                 ");
 		System.out.println("*****************************************************");
 		System.out.println("Entre com a opção desejada:                          ");
-		System.out.println("                                                     ");
+		System.out.println("                                                     0" + Cores.TEXT_RESET);
 	}
 
 	public static void criarConta() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Criar Conta\n\n");
+		System.out.println("        " + Cores.TEXT_RESET);
 	
 	}
 
 	public static void listarContas() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Listar todas as Contas\n\n");
+		System.out.println("        " + Cores.TEXT_RESET);
 
 	}
 
 	public static void buscarConta() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Consultar dados da Conta - por número\n\n");
-	
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
 	public static void atualizarConta() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Atualizar dados da Conta\n\n");
-		
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
 	public static void apagarConta() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Apagar a Conta\n\n");
-		
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
 	public static void sacar() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Saque\n\n");
-	
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
 	public static void depositar() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Depósito\n\n");
-		
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
 	public static void transferir() {
 		imprimirMenu();
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Transferência entre Contas\n\n");
-		
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
     
 	public static void sobre() {
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("\n*********************************************************");
 		System.out.println("Projeto Desenvolvido por Joao Pedro O. Rocha: ");
 		System.out.println("PedroRocha2info@gmail.com");
 		System.out.println("https://github.com/rochapedru/conta_bancaria");
 		System.out.println("*********************************************************");
+		System.out.println("        " + Cores.TEXT_RESET);
 	}
 }
 
