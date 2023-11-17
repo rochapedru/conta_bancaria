@@ -6,9 +6,9 @@ import java.util.Scanner;
 import conta_bancaria.util.Cores;
 
 public class Menu {
+	static Scanner leia = new Scanner(System.in);
 	public static void main(String[] args) {
 
-		Scanner leia = new Scanner(System.in);
 
 		int opcao;
 
@@ -26,14 +26,14 @@ public class Menu {
 			}
 
 			switch (opcao) {
-				case 1 -> criarConta();
-				case 2 -> listarContas();
-				case 3 -> buscarConta();
-				case 4 -> atualizarConta();
-				case 5 -> apagarConta();
-				case 6 -> sacar();
-				case 7 -> depositar();
-				case 8 -> transferir();
+				case 1 -> printcriarConta();
+				case 2 -> printlistarContas();
+				case 3 -> printbuscarConta();
+				case 4 -> printatualizarConta();
+				case 5 -> printapagarConta();
+				case 6 -> printsacar();
+				case 7 -> printdepositar();
+				case 8 -> printtransferir();
 				default -> System.out.println("\nOpção Inválida!\n");
 			};
 		}
@@ -55,10 +55,10 @@ public class Menu {
 		System.out.println("            9 - Sair                                 ");
 		System.out.println("*****************************************************");
 		System.out.println("Entre com a opção desejada:                          ");
-		System.out.println("                                                     0" + Cores.TEXT_RESET);
+		System.out.println("                                                    " + Cores.TEXT_RESET);
 	}
 
-	public static void criarConta() {
+	public static void printcriarConta() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Criar Conta\n\n");
@@ -66,7 +66,7 @@ public class Menu {
 	
 	}
 
-	public static void listarContas() {
+	public static void printlistarContas() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Listar todas as Contas\n\n");
@@ -74,42 +74,42 @@ public class Menu {
 
 	}
 
-	public static void buscarConta() {
+	public static void printbuscarConta() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Consultar dados da Conta - por número\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
-	public static void atualizarConta() {
+	public static void printatualizarConta() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Atualizar dados da Conta\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
-	public static void apagarConta() {
+	public static void printapagarConta() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Apagar a Conta\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
-	public static void sacar() {
+	public static void printsacar() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Saque\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
-	public static void depositar() {
+	public static void printdepositar() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Depósito\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
 
-	public static void transferir() {
+	public static void printtransferir() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Transferência entre Contas\n\n");
@@ -125,5 +125,16 @@ public class Menu {
 		System.out.println("*********************************************************");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
+	/**
+	 * public static void sobre() {
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
+		System.out.println("\n*********************************************************");
+		System.out.println("Projeto Desenvolvido por Joao Pedro O. Rocha: ");
+		System.out.println("PedroRocha2info@gmail.com");
+		System.out.println("https://github.com/rochapedru/conta_bancaria");
+		System.out.println("*********************************************************");
+		System.out.println("        " + Cores.TEXT_RESET);
+	}*/
+	
 }
 
