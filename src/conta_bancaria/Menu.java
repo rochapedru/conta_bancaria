@@ -1,52 +1,63 @@
 package conta_bancaria;
 
-
 import java.util.Scanner;
 
 import conta_bancaria.model.Conta;
+import conta_bancaria.model.ContaCorrente;
 import conta_bancaria.util.Cores;
 
 public class Menu {
 	static Scanner leia = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-
 		int opcao;
+
+		// Teste da Classe Conta
+		Conta c1 = new Conta(1, 111, 1, "Adriana", 10.0f);
+		c1.visualizar();
+		c1.sacar(2.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+
+		Conta c2 = new Conta(2, 222, 1, "Vitor", 300.00f);
+		c2.visualizar();
+
+		// Teste da Classe Conta Corrente
+		// saldo mais limite
+		ContaCorrente cc1 = new ContaCorrente(2, 333, 1, "Mariana", 400.0f, 400.0f);
+		cc1.visualizar();
+		cc1.sacar(10.0f);
+		cc1.visualizar();
+		cc1.depositar(10.0f);
+		cc1.visualizar();
 
 		imprimirMenu();
 
 		while (true) {
-			
-			/** Cria objetos */
-			Conta c1 = new Conta(1, 123, 2, "Vitoria", 100000.0f);
-			c1.visualizar();
-			System.out.println("Exibis saldo: " + c1.getSaldo());
-			c1.setSaldo(300000.0f);
-			c1.visualizar();
-			c1.depositar(500000.0f);
-			c1.visualizar();
 
 			opcao = leia.nextInt();
-			
 
 			if (opcao == 9) {
 				System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				sobre();
-                leia.close();
+				leia.close();
 				System.exit(0);
 			}
 
 			switch (opcao) {
-				case 1 -> printcriarConta();
-				case 2 -> printlistarContas();
-				case 3 -> printbuscarConta();
-				case 4 -> printatualizarConta();
-				case 5 -> printapagarConta();
-				case 6 -> printsacar();
-				case 7 -> printdepositar();
-				case 8 -> printtransferir();
-				default -> System.out.println("\nOpção Inválida!\n");
-			};
+			case 1 -> printcriarConta();
+			case 2 -> printlistarContas();
+			case 3 -> printbuscarConta();
+			case 4 -> printatualizarConta();
+			case 5 -> printapagarConta();
+			case 6 -> printsacar();
+			case 7 -> printdepositar();
+			case 8 -> printtransferir();
+			default -> System.out.println("\nOpção Inválida!\n");
+			}
+			;
 		}
 	}
 
@@ -74,7 +85,7 @@ public class Menu {
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Criar Conta\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
-	
+
 	}
 
 	public static void printlistarContas() {
@@ -126,7 +137,7 @@ public class Menu {
 		System.out.println("Transferência entre Contas\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
-    
+
 	public static void sobre() {
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("\n*********************************************************");
@@ -137,15 +148,14 @@ public class Menu {
 		System.out.println("        " + Cores.TEXT_RESET);
 	}
 	/**
-	 * public static void sobre() {
-		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
-		System.out.println("\n*********************************************************");
-		System.out.println("Projeto Desenvolvido por Joao Pedro O. Rocha: ");
-		System.out.println("PedroRocha2info@gmail.com");
-		System.out.println("https://github.com/rochapedru/conta_bancaria");
-		System.out.println("*********************************************************");
-		System.out.println("        " + Cores.TEXT_RESET);
-	}*/
-	
-}
+	 * public static void sobre() { System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT
+	 * + Cores.ANSI_BLACK_BACKGROUND);
+	 * System.out.println("\n*********************************************************");
+	 * System.out.println("Projeto Desenvolvido por Joao Pedro O. Rocha: ");
+	 * System.out.println("PedroRocha2info@gmail.com");
+	 * System.out.println("https://github.com/rochapedru/conta_bancaria");
+	 * System.out.println("*********************************************************");
+	 * System.out.println(" " + Cores.TEXT_RESET); }
+	 */
 
+}
