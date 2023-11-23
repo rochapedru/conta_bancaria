@@ -8,19 +8,23 @@ import conta_bancaria.util.Cores;
 
 public class Menu {
 	static Scanner leia = new Scanner(System.in);
+	
+	static int opcao, numero, agencia, tipo, aniversario;
+	static String titular;
+	static float saldo, limite;
+	
+	static ContaController contas = new ContaController();
 
 	public static void main(String[] args) {
 		
-		Scanner leia = new Scanner(System.in);
 
-		int opcao, numero, agencia, tipo, aniversario;
-		String titular;
-		float saldo, limite;
 		
-		ContaController contas = new ContaController();
+		
+		
 		
 		ContaCorrente cc1 = new ContaCorrente(contas.gerarNumero(), 123, 1, "Joao da Silva", 1000.00f, 100.00f);
 		contas.cadastrar(cc1);
+		
 		
 		
 		
@@ -87,6 +91,10 @@ public class Menu {
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Consultar dados da Conta - por número\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
+		
+		System.out.println("dige o numero da conta: ");
+		numero = leia.nextInt();
+		contas.procurarPorNumero(numero);
 	}
 
 	public static void printatualizarConta() {
