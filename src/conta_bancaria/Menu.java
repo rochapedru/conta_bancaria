@@ -2,7 +2,7 @@ package conta_bancaria;
 
 import java.util.Scanner;
 
-import conta_bancaria.model.Conta;
+import conta_bancaria.controller.ContaController;
 import conta_bancaria.model.ContaCorrente;
 import conta_bancaria.util.Cores;
 
@@ -10,28 +10,20 @@ public class Menu {
 	static Scanner leia = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
 
-		int opcao;
-
-		// Teste da Classe Conta
-		Conta c1 = new Conta(1, 111, 1, "Adriana", 10.0f);
-		c1.visualizar();
-		c1.sacar(2.0f);
-		c1.visualizar();
-		c1.depositar(5000.0f);
-		c1.visualizar();
-
-		Conta c2 = new Conta(2, 222, 1, "Vitor", 300.00f);
-		c2.visualizar();
-
-		// Teste da Classe Conta Corrente
-		// saldo mais limite
-		ContaCorrente cc1 = new ContaCorrente(2, 333, 1, "Mariana", 400.0f, 400.0f);
-		cc1.visualizar();
-		cc1.sacar(10.0f);
-		cc1.visualizar();
-		cc1.depositar(10.0f);
-		cc1.visualizar();
+		int opcao, numero, agencia, tipo, aniversario;
+		String titular;
+		float saldo, limite;
+		
+		ContaController contas = new ContaController();
+		
+		ContaCorrente cc1 = new ContaCorrente(contas.gerarNumero(), 123, 1, "Joao da Silva", 1000.00f, 100.00f);
+		contas.cadastrar(cc1);
+		
+		
+		
 
 		imprimirMenu();
 
@@ -47,7 +39,7 @@ public class Menu {
 			}
 
 			switch (opcao) {
-			case 1 -> printcriarConta();
+			
 			case 2 -> printlistarContas();
 			case 3 -> printbuscarConta();
 			case 4 -> printatualizarConta();
@@ -80,20 +72,14 @@ public class Menu {
 		System.out.println("                                                    " + Cores.TEXT_RESET);
 	}
 
-	public static void printcriarConta() {
-		imprimirMenu();
-		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
-		System.out.println("Criar Conta\n\n");
-		System.out.println("        " + Cores.TEXT_RESET);
 
-	}
 
 	public static void printlistarContas() {
 		imprimirMenu();
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
 		System.out.println("Listar todas as Contas\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
-
+		
 	}
 
 	public static void printbuscarConta() {

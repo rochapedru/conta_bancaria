@@ -1,10 +1,30 @@
 package conta_bancaria.model;
 
-public class Conta {
+public abstract class Conta {
+	// Definir os atributos da classe
+		// clikar na classe, ir em Source, e generate construicion using fields, e
+		// selecionar Omit call to default
+	private int numero;
+	private int agencia;
+	private int tipo;
+	private String titular;
+	private float saldo;
+	// construtor mesmo nome que classe
+		// * .this é atributo, os int parametros
+	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
+		this.numero = numero;
+		this.agencia = agencia;
+		this.tipo = tipo;
+		this.titular = titular;
+		this.saldo = saldo;
+	}
+
+	
 	// souce, generate getters and seterrs,, construction antes
+	
 	public int getNumero() {
 		return numero;
-	}
+		}
 
 	public void setNumero(int numero) {
 		this.numero = numero;
@@ -54,26 +74,6 @@ public class Conta {
 		this.setSaldo(this.getSaldo() + valor);
 	}
 		
-
-	// construtor mesmo nome que classe
-	// * .this é atributo, os int parametros
-	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
-		this.numero = numero;
-		this.agencia = agencia;
-		this.tipo = tipo;
-		this.titular = titular;
-		this.saldo = saldo;
-	}
-
-	// Definir os atributos da classe
-	// clikar na classe, ir em Source, e generate construicion using fields, e
-	// selecionar Omit call to default
-	private int numero;
-	private int agencia;
-	private int tipo;
-	private String titular;
-	private float saldo;
-
 	// pois nao retorna, so printa na tela
 	public void visualizar() {
 		String tipo = "";
