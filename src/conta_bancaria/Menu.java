@@ -13,7 +13,7 @@ public class Menu {
 	static ContaController contas = new ContaController();
 	public static void keyPress() {
 		try {
-			System.out.println("\n\n pressione a tecla Enter para continuar");
+			System.out.println("\n\n pressione a tecla Enter para  continuar");
 			System.in.read();
 		} catch (IOException e) {
 			System.out.println("voce prescionou uma tecla invalida: ");
@@ -102,6 +102,7 @@ public class Menu {
 		System.out.println("2 - Listar todas as Contas\n\n");
 		System.out.println("        " + Cores.TEXT_RESET);
 		contas.listarTodas();
+		keyPress();
 	}
 	public static void printbuscarConta() {
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
@@ -124,6 +125,7 @@ public class Menu {
 
 		} else
 			System.out.println("A conta " + numero + " nao foi encontrada");
+		keyPress();
 	}
 	public static void printapagarConta() {
 		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
@@ -180,6 +182,7 @@ public class Menu {
 		System.out.println("https://github.com/rochapedru/conta_bancaria");
 		System.out.println("*********************************************************");
 		System.out.println("        " + Cores.TEXT_RESET);
+	
 	}
 	/**
 	 * public static void sobre() { System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT
