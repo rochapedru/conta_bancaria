@@ -26,7 +26,7 @@ public class Menu {
 			imprimirMenu();
 			opcao = leia.nextInt();
 
-			if (opcao == 9) {
+			if (opcao == 13) {
 				System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				sobre();
 				leia.close();
@@ -42,6 +42,19 @@ public class Menu {
 			case 6 -> printsacar();
 			case 7 -> printdepositar();
 			case 8 -> printtransferir();
+			case 9 ->  {
+				System.out.println("Consulta por titular ");
+				
+				System.out.println("Digite nome titular ");
+				leia.skip("\\R");
+				
+				titular = leia.nextLine();
+				contas.procurarPorNome(titular);
+				
+				keyPress();
+				
+			}
+			
 			default -> System.out.println("\nOpção Inválida!\n");
 			}
 		}
@@ -60,7 +73,7 @@ public class Menu {
 		System.out.println("            6 - Sacar                                ");
 		System.out.println("            7 - Depositar                            ");
 		System.out.println("            8 - Transferir valores entre Contas      ");
-		System.out.println("            9 - Sair                                 ");
+		System.out.println("            9 - consulta por titular                                ");
 		System.out.println("*****************************************************");
 		System.out.println("Entre com a opção desejada:                          ");
 		System.out.println("                                                    " + Cores.TEXT_RESET);
@@ -83,7 +96,7 @@ public class Menu {
 		saldo = leia.nextFloat();
 		switch (tipo) {
 		case 1 -> {
-			System.out.println("Digite o Limite de Crédito (R$): ");
+			System.out.println("Digite o Limite de Crédito  (R$): ");
 			limite = leia.nextFloat();
 			contas.cadastrar(new ContaCorrente(contas.gerarNumero(), agencia, tipo, titular, saldo, limite));
 			break;
